@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "v9H+rQnOElLape/RpOiwBfDzxq2gnuOaNFcPfOEccOHln3tUkprXE1y+TnjhSK7OCOrMmyPipRp5CLBBRwn6qg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Entites\\NewsWebProject.Entites.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
