@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\cs\Utilities\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\..\..\cs\Utilities\Utilities\Utilities.csproj" />
     <ProjectReference Include="..\NewsWebProject.Dal\NewsWebProject.Dal.csproj" />
     <ProjectReference Include="..\NewsWebProject.Model\NewsWebProject.Model.csproj" />
   </ItemGroup>

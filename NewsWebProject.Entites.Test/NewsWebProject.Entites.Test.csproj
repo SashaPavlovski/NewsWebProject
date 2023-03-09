@@ -12,4 +12,12 @@
     <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\cs\Utilities\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\NewsWebProject.Dal\NewsWebProject.Dal.csproj" />
+    <ProjectReference Include="..\NewsWebProject.Data.Sql\NewsWebProject.Data.Sql.csproj" />
+    <ProjectReference Include="..\NewsWebProject.Entites\NewsWebProject.Entites.csproj" />
+    <ProjectReference Include="..\NewsWebProject.Model\NewsWebProject.Model.csproj" />
+  </ItemGroup>
+
 </Project>

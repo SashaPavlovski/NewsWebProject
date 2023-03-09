@@ -169,14 +169,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj"
-              },
               "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj": {
                 "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj"
               },
               "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj": {
                 "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -275,6 +275,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj",
+        "projectName": "Utilities",
+        "projectPath": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

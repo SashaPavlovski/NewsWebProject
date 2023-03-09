@@ -1,6 +1,5 @@
 ﻿using NewsWebProject.Model.Tables;
 using System.Data.Entity;
-using System.Data.SqlClient;
 
 namespace NewsWebProject.Dal
 {

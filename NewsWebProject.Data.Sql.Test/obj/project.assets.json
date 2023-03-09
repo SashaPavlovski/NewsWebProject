@@ -714,10 +714,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj": "1.0.0",
           "NewsWebProject.Dal": "1.0.0",
           "NewsWebProject.Model": "1.0.0",
-          "System.Data.SqlClient": "4.8.5"
+          "System.Data.SqlClient": "4.8.5",
+          "Utilities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NewsWebProject.Data.Sql.dll": {}
@@ -737,6 +737,15 @@
         },
         "runtime": {
           "bin/placeholder/NewsWebProject.Model.dll": {}
+        }
+      },
+      "Utilities/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Utilities.dll": {}
         }
       }
     }
@@ -1996,6 +2005,11 @@
       "type": "project",
       "path": "../NewsWebProject.Model/NewsWebProject.Model.csproj",
       "msbuildProject": "../NewsWebProject.Model/NewsWebProject.Model.csproj"
+    },
+    "Utilities/1.0.0": {
+      "type": "project",
+      "path": "../../../cs/Utilities/Utilities/Utilities.csproj",
+      "msbuildProject": "../../../cs/Utilities/Utilities/Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2085,16 +2099,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }

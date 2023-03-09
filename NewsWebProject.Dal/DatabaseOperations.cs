@@ -2,7 +2,7 @@
 
 namespace NewsWebProject.Dal
 {
-    public abstract class DatabaseOperations:BaseDal
+    public class DatabaseOperations:BaseDal
     {
         public SqlConnection connection;
 

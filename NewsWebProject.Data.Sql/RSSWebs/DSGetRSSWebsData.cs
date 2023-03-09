@@ -1,6 +1,7 @@
 ﻿using Utilities.Logger;
 using System.Data.SqlClient;
 using NewsWebProject.Model.Tables;
+using NewsWebProject.Dal;
 
 namespace NewsWebProject.Data.Sql.RSSWebs
 {
@@ -8,10 +9,13 @@ namespace NewsWebProject.Data.Sql.RSSWebs
     {
         public DSGetRSSWebsData(Logger Logger) : base(Logger)
         {
-            GetSql = new Dal.GetSqlData();
+            GetSql = new DatabaseOperations();
         }
 
-        public Dal.GetSqlData GetSql;
+        public DatabaseOperations GetSql;
+
+
+        //Getting a list of the xml url and their categories
         public object GetFromDataBase(params object[] argv)
         {
             //Logger.LogEvent("Enter into GetFromDataBase function");
@@ -69,12 +73,17 @@ namespace NewsWebProject.Data.Sql.RSSWebs
             return null;
 
         }
+
+        //No entry values
         public void SetValues(SqlCommand command, params object[] argv)
         {
             return;
         }
         
         public string Insert { get; set; } = " select *,*\r\n from [dbo].[TBRSSWebs] TB1 inner join [dbo].[TBCategories] TB2\r\n on TB1.Category_CategoryID = TB2.CategoryID";
+
+
+        //Getting a list of the xml url and their categories
         public object GetData(object value)
         {
            // Logger.LogEvent("\n\nEnter into GetBusinessCompanyUserRow function");

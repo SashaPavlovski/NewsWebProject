@@ -4,6 +4,142 @@
     "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Entites\\NewsWebProject.Entites.csproj": {}
   },
   "projects": {
+    "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj",
+        "projectName": "NewsWebProject.Dal",
+        "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\NewsWebProject.Data.Sql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\NewsWebProject.Data.Sql.csproj",
+        "projectName": "NewsWebProject.Data.Sql",
+        "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\NewsWebProject.Data.Sql.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Dal\\NewsWebProject.Dal.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Entites\\NewsWebProject.Entites.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -28,8 +164,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\cs\\Utilities\\Utilities\\Utilities.csproj"
+              "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\NewsWebProject.Data.Sql.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Data.Sql\\NewsWebProject.Data.Sql.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj"
+              },
+              "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -43,6 +185,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.46, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,6 +209,82 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj",
+        "projectName": "NewsWebProject.Model",
+        "projectPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\NewsWebProject.Model.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\azur-function-class\\NewsWebProject\\NewsWebProject.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj",
+        "projectName": "Utilities",
+        "projectPath": "C:\\Users\\User\\source\\repos\\cs\\Utilities\\Utilities\\Utilities.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }
