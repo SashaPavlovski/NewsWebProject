@@ -1,4 +1,5 @@
-﻿using NewsWebProject.Model.Tables;
+﻿using HtmlAgilityPack;
+using NewsWebProject.Model.Tables;
 using System.Data;
 using System.Xml;
 using Utilities.Logger;
@@ -24,7 +25,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
 
                 while (!StopLoop)
                 {
-                    this.CreateDataTableTable(DataTable);
+                    DataTable=  this.CreateDataTableTable();
 
                     if (WebsData.Count > 0)
                     {
@@ -38,6 +39,13 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
                 }
             });
         }
+
+        public void SubstringImageAndDescription(string descriptionString, out string src, out string description)
+        {
+                src = null;
+                description = null;
+        }
+
         public async void GettingEachCategoryNews(List<TBRSSWebs> WebsData)
         {
             foreach (TBRSSWebs WebData in WebsData)
@@ -55,6 +63,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
                     {
                         // node["media:content"].Attributes["url"].Value,
                         DataTable.Rows.Add(node["title"].InnerText, node["media:content"].Attributes["url"].Value,node["description"].InnerText,node["link"].InnerText,0, WebData, true) ;
+
                         //לנסות לעשות אינדאקאר
                         //להוסיף תאריך
                     }

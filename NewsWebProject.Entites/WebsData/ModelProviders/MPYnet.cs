@@ -1,11 +1,12 @@
-﻿using NewsWebProject.Model.Tables;
+﻿using HtmlAgilityPack;
+using NewsWebProject.Model.Tables;
 using System.Data;
 using System.Xml;
 using Utilities.Logger;
 
 namespace NewsWebProject.Entites.WebsData.ModelProviders
 {
-    internal class MPYnet: BaseWebsData, IProvideData
+    public class MPYnet: BaseWebsData, IProvideData
     {
         public DataTable DataTable { get; set; }
         public Task QueueTask { get; set; }
@@ -24,7 +25,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
 
                 while (!StopLoop)
                 {
-                    this.CreateDataTableTable(DataTable);
+                   // this.CreateDataTableTable(DataTable);
 
                     if (WebsData.Count > 0)
                     {
@@ -38,6 +39,31 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
                 }
             });
         }
+
+        public void SubstringImageAndDescription(string descriptionString, out string src, out string description)
+        {
+            if (descriptionString != null)
+            {
+                var htmlDoc = new HtmlDocument();
+                htmlDoc.LoadHtml(descriptionString);
+
+                var imgNode = htmlDoc.DocumentNode.SelectSingleNode($"//img");
+                src = imgNode.Attributes["src"].Value;
+                var descriptionNode = htmlDoc.DocumentNode.SelectSingleNode($"//img");
+                description = descriptionNode.NextSibling.InnerText.Trim();
+
+                Console.WriteLine(src);
+                Console.WriteLine(description);
+            }
+            else
+            {
+                src = null;
+                description = null;
+            }
+
+        }
+
+
         public async void GettingEachCategoryNews(List<TBRSSWebs> WebsData)
         {
             foreach (TBRSSWebs WebData in WebsData)

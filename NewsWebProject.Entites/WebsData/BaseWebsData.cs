@@ -1,10 +1,8 @@
 ﻿using HtmlAgilityPack;
 using NewsWebProject.Dal;
 using NewsWebProject.Model.Tables;
-using System;
 using System.Data;
 using Utilities.Logger;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace NewsWebProject.Entites.WebsData
 {
@@ -16,7 +14,7 @@ namespace NewsWebProject.Entites.WebsData
         public List<TBRSSWebs> WebsData { get; set; }
         public void Init();
         public void GettingEachCategoryNews(List<TBRSSWebs> WebsData);
-
+        public void SubstringImageAndDescription(string descriptionString, out string src, out string description);
     }
     public class BaseWebsData:BaseDal
     {
@@ -43,9 +41,9 @@ namespace NewsWebProject.Entites.WebsData
             }
         }
 
-        public DataTable CreateDataTableTable(DataTable dataTable)
+        public DataTable CreateDataTableTable()
         {
-            dataTable = new DataTable();
+            DataTable dataTable = new DataTable();
 
             dataTable.Columns.Add("NewsItemTitle", typeof(string));
             dataTable.Columns.Add("NewsItemImage", typeof(string));
@@ -58,26 +56,6 @@ namespace NewsWebProject.Entites.WebsData
             return dataTable;
         }
 
-        public void SubstringImageAndDescription(string descriptionString,out string src, out string description)
-        {
-            if (descriptionString != null)
-            {
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(descriptionString);
 
-                var imgNode = htmlDoc.DocumentNode.SelectSingleNode($"//img");
-                src = imgNode.Attributes["src"].Value;
-                description = imgNode.NextSibling.InnerText.Trim();
-
-                Console.WriteLine(src);
-                Console.WriteLine(description);
-            }
-            else
-            {
-                src = null;
-                description = null;
-            }
-
-        }
     }
 }
