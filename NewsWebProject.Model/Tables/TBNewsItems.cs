@@ -20,5 +20,6 @@ namespace NewsWebProject.Model.Tables
         public int NewsItemEntriesCount { get; set; } = 0;
         public TBRSSWebs RSSWeb { get; set; }
         public bool Active { get; set; } = true;
+        public DateTime NewsItemDate { get; set; }
     }
 }

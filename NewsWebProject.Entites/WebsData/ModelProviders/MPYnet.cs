@@ -12,6 +12,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
         public Task QueueTask { get; set; }
         public bool StopLoop { get; set; } = false;
         public List<TBRSSWebs> WebsData { get; set; }
+        public DateTime StartRead { get; set; } 
         public MPYnet(Logger logger, List<TBRSSWebs> ynetData) : base(logger)
         {
             WebsData = ynetData;
@@ -22,50 +23,28 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
         {
             QueueTask = Task.Run(() =>
             {
+                DataTable = this.CreateDataTableTable();
 
                 while (!StopLoop)
                 {
-                   // this.CreateDataTableTable(DataTable);
-
-                    if (WebsData.Count > 0)
+                    if (WebsData!= null && WebsData.Count > 0)
                     {
                         GettingEachCategoryNews(WebsData);
 
                     }
 
                     //  DataTable.Clear();
-
-                    Thread.Sleep(100);
+                    DataTable.Rows.Count.ToString();
+                    Thread.Sleep(1000 * 60 * 3);
+                    int x = 1;
                 }
             });
         }
 
-        public void SubstringImageAndDescription(string descriptionString, out string src, out string description)
-        {
-            if (descriptionString != null)
-            {
-                var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(descriptionString);
-
-                var imgNode = htmlDoc.DocumentNode.SelectSingleNode($"//img");
-                src = imgNode.Attributes["src"].Value;
-                var descriptionNode = htmlDoc.DocumentNode.SelectSingleNode($"//img");
-                description = descriptionNode.NextSibling.InnerText.Trim();
-
-                Console.WriteLine(src);
-                Console.WriteLine(description);
-            }
-            else
-            {
-                src = null;
-                description = null;
-            }
-
-        }
-
-
         public async void GettingEachCategoryNews(List<TBRSSWebs> WebsData)
         {
+            StartRead = DateTime.Now;
+
             foreach (TBRSSWebs WebData in WebsData)
             {
                 using (var client = new HttpClient())
@@ -76,17 +55,20 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
                     XmlDocument xmlDocument = new XmlDocument();
                     xmlDocument.LoadXml(contact);
                     Console.WriteLine(contact);
+                    string hhh = xmlDocument.SelectNodes("//item").Count.ToString();
 
                     foreach (XmlNode node in xmlDocument.SelectNodes("//item"))
                     {
                         string src;
                         string description;
 
-                        this.SubstringImageAndDescription(node["description"].InnerText, out src, out description);
+                        this.SubstringImageAndDescription(node["description"].InnerText, "</div>", null, out src, out description);
 
-                        DataTable.Rows.Add(node["title"].InnerText, src, description, node["link"].InnerText, 0, WebData, true);
+                        DataTable.Rows.Add(node["title"].InnerText, src, description, node["link"].InnerText, 0, WebData, true, StartRead);
                         //לנסות לעשות אינדאקאר
                     }
+                    DataTable.Rows.Count.ToString();
+
                 }
             }
         }

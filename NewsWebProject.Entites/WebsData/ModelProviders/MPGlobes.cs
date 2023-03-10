@@ -12,6 +12,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
         public Task QueueTask { get; set; }
         public bool StopLoop { get; set; } = false;
         public List<TBRSSWebs> WebsData { get; set; }
+        public DateTime StartRead { get; set; }
         public MPGlobes(Logger logger, List<TBRSSWebs> globesData) : base(logger)
         {
             WebsData = globesData;
@@ -20,34 +21,32 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
         }
         public void Init()
         {
+
+            DataTable = this.CreateDataTableTable();
+
             QueueTask = Task.Run(() =>
             {
 
                 while (!StopLoop)
                 {
-                    DataTable=  this.CreateDataTableTable();
-
-                    if (WebsData.Count > 0)
+                    if (WebsData != null && WebsData.Count > 0)
                     {
                         GettingEachCategoryNews(WebsData);
 
                     }
 
-                  //  DataTable.Clear();
-
-                    Thread.Sleep(100000);
+                    //  DataTable.Clear();
+                    DataTable.Rows.Count.ToString();
+                    Thread.Sleep(1000 * 60 * 3);
+                    int x = 1;
                 }
             });
         }
 
-        public void SubstringImageAndDescription(string descriptionString, out string src, out string description)
-        {
-                src = null;
-                description = null;
-        }
-
         public async void GettingEachCategoryNews(List<TBRSSWebs> WebsData)
         {
+            StartRead = DateTime.Now;
+
             foreach (TBRSSWebs WebData in WebsData)
             {
                 using (var client = new HttpClient())
@@ -61,8 +60,7 @@ namespace NewsWebProject.Entites.WebsData.ModelProviders
 
                     foreach (XmlNode node in xmlDocument.SelectNodes("//item"))
                     {
-                        // node["media:content"].Attributes["url"].Value,
-                        DataTable.Rows.Add(node["title"].InnerText, node["media:content"].Attributes["url"].Value,node["description"].InnerText,node["link"].InnerText,0, WebData, true) ;
+                        DataTable.Rows.Add(node["title"].InnerText, node["media:content"].Attributes["url"].Value,node["description"].InnerText,node["link"].InnerText,0, WebData, true, StartRead) ;
 
                         //לנסות לעשות אינדאקאר
                         //להוסיף תאריך

@@ -42,13 +42,11 @@ namespace NewsWebProject.Entites.Test.TestWebData
         public void Init()
         {
             getRSSWebsData = new DSGetRSSWebsData(null);
-            GetRSSWebs();
-            GetGlobesCategoriesNews2();
         }
 
-        //[Test]
-        //[Category("GetRSSWebs")]
-       // [Order(1)]
+        [Test]
+        [Category("GetRSSWebs")]
+        [Order(1)]
 
         public void GetRSSWebs()
         {
@@ -68,43 +66,42 @@ namespace NewsWebProject.Entites.Test.TestWebData
 
         }
 
-        //[Test]
-        //[Category("GetGlobesCategoriesNews1")]
-        //[Order(2)]
-        //public void GetGlobesCategoriesNews1()
-        //{
-        //    provideGlobes = new MPGlobes(null, GlobesList);
-
-        //}
-
-        //[Test]
-        //[Category("GetGlobesCategoriesNews2")]
-       // [Order(3)]
-        public void GetGlobesCategoriesNews2()
-        { 
-
-            provideWalla = new MPWalla(null, WallaList);
-            Console.ReadLine();
+        [Test]
+        [Category("GetGlobesCategoriesNews1")]
+        [Order(2)]
+        public void GetGlobesCategoriesNews1()
+        {
+            provideGlobes = new MPGlobes(null, GlobesList);
         }
 
-        //[Test]
-        //[Category("GetGlobesCategoriesNews3")]
-        //[Order(4)]
-        //public void GetGlobesCategoriesNews3()
-        //{
+        [Test]
+        [Category("GetGlobesCategoriesNews2")]
+        [Order(3)]
+        public void GetGlobesCategoriesNews2()
+        {
 
-        //    provideMaariv = new MPMaariv(null, MaarivList);
+            provideWalla = new MPWalla(null, WallaList);
+        }
 
-        //}
+        [Test]
+        [Category("GetGlobesCategoriesNews3")]
+        [Order(4)]
+        public void GetGlobesCategoriesNews3()
+        {
 
-        //[Test]
-        //[Category("GetGlobesCategoriesNews4")]
-        //[Order(5)]
-        //public void GetGlobesCategoriesNews4()
-        //{
+            provideMaariv = new MPMaariv(null, MaarivList);
 
-        //    provideYnet = new MPYnet(null, YnetList);
+        }
 
-        //}
+        [Test]
+        [Category("GetGlobesCategoriesNews4")]
+        [Order(5)]
+        public void GetGlobesCategoriesNews4()
+        {
+
+            provideYnet = new MPYnet(null, YnetList);
+            Console.ReadLine();
+
+        }
     }
 }
